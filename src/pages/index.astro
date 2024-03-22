@@ -1,7 +1,7 @@
 ---
-import Layout from "@/layouts/pageLayout.astro";
-import Link from "@/components/link.astro";
-import PostTitle from "@/components/postTitle.astro";
+import Layout from "../layouts/blogLayout.astro";
+import Link from "../components/link.astro";
+import PostTitle from "../components/postTitle.astro";
 import type { Frontmatter } from "./types";
 
 const posts = await Astro.glob<Frontmatter>("../content/posts/**/*.mdx");
