@@ -1,0 +1,23 @@
+---
+import HomeLink from "./homeLink.astro";
+import { Image } from "astro:assets";
+import Link from "./link.astro";
+---
+
+<header class="mb-14 flex flex-row place-content-between">
+  <HomeLink />
+  <span class="relative top-[4px] italic">
+    by
+    <Link
+      classList={["scale-100 active:scale-100"]}
+      href="https://github.com/sunshineLixun"
+      ><Image
+        width="32"
+        height="32"
+        class="relative -top-1 mx-2 inline h-8 w-8 rounded-full"
+        src="https://avatars.githubusercontent.com/u/15700015?v=4"
+        alt="sunshineLixun"
+      /></Link
+    >
+  </span>
+</header>

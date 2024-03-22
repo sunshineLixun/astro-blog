@@ -1,0 +1,14 @@
+---
+import Layout from "./layout.astro";
+import Header from "@/components/header.astro";
+---
+
+<Layout>
+  <slot name="header">
+    <Header />
+  </slot>
+
+  <main>
+    <slot />
+  </main>
+</Layout>
