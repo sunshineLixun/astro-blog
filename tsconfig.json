@@ -3,16 +3,10 @@
   "compilerOptions": {
     "baseUrl": "/Users/li/Desktop/astro-blog",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.astro"
-  ]
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.astro"]
 }

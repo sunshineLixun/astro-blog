@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/pageLayout.astro";
+import BlogLayout from "@/layouts/blogLayout.astro";
 import "@/styles/markdown.css";
 import type { Frontmatter } from "./types";
 import type { MarkdownInstance } from "astro";
@@ -28,7 +28,7 @@ const words = getPostWords("");
 const readTime = readingTime(words);
 ---
 
-<Layout
+<BlogLayout
   ><article>
     <h1
       class="text-[40px] font-black leading-[44px] text-[--title] font-['Montserrat']"
@@ -54,5 +54,5 @@ const readTime = readingTime(words);
     <div class="markdown mt-10">
       <Content />
     </div>
-  </article></Layout
+  </article></BlogLayout
 >
