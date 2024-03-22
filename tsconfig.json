@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "/Users/li/Desktop/astro-blog",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
