@@ -3,6 +3,7 @@ import BlogLayout from "@/layouts/blogLayout.astro";
 import "@/styles/markdown.css";
 import type { Frontmatter } from "./types";
 import type { MarkdownInstance } from "astro";
+import fs from "node:fs";
 import { getPostWords, readingTime } from "@/utils/utils";
 import "@fontsource/montserrat/900.css";
 
@@ -12,19 +13,23 @@ export async function getStaticPaths() {
   )) as MarkdownInstance<Frontmatter>[];
 
   return posts.map((post) => {
+    const fileContent = fs.readFileSync(post.file, { encoding: "utf8" });
+
     return {
       params: {
         slug: post.frontmatter.href,
       },
       props: {
         post,
+        fileContent,
       },
     };
   });
 }
 
 const { Content, frontmatter } = Astro.props.post;
-const words = getPostWords("");
+const { fileContent } = Astro.props;
+const words = getPostWords(fileContent);
 const readTime = readingTime(words);
 ---
 
@@ -46,10 +51,10 @@ const readTime = readingTime(words);
     </p>
 
     <p class="mt-2 text-[13px] text-gray-700 dark:text-gray-300">
-      字数：{words}
+      word count：{words}
     </p>
     <p class="mt-2 text-[13px] text-gray-700 dark:text-gray-300">
-      预计阅读时间：{readTime}分钟
+      estimated reading time：{readTime}minute
     </p>
     <div class="markdown mt-10">
       <Content />
