@@ -21,6 +21,7 @@
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
     "astro": "^4.5.5",
+    "astro-loading-indicator": "^0.4.0",
     "colorjs.io": "^0.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
